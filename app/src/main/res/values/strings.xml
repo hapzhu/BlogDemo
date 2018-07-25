@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BlogDemo</string>
+    <string name="large_text">
+        "Material is the metaphor
+    </string>
+    <string name="action_settings">Settings</string>
+    <string name="action_locales">LocaleList</string>
+    <string name="action_link">Links</string>
+    <string name="en_saying_01">Wasting time is robbing oneself</string>
+    <string name="en_saying_02">It is never too late to learn</string>
+</resources>

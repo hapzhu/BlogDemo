@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BlogDemo</string>
+    <string name="action_settings">设置</string>
+    <string name="action_locales">语言列表</string>
+    <string name="action_link">链接</string>
+    <string name="en_saying_01">浪费时间就是掠夺自己</string>
+    <string name="en_saying_02">活到老，学到老</string>
+</resources>
