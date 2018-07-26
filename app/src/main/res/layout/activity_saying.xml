@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SayingActivity">
+
+    <TextView
+        android:id="@+id/tv_saying01"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/fr_saying01"
+        android:textSize="16sp"
+        android:textColor="#111"
+     />
+
+    <TextView
+        android:layout_marginTop="60dp"
+        android:id="@+id/tv_saying02"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/fr_saying02"
+        android:textSize="16sp"
+        android:textColor="#111"
+ />
+    <Button
+        android:id="@+id/btn_reload"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="120dp"
+        android:text="重新加载"
+        android:textSize="16sp"
+        android:textColor="#111"
+        />
+</merge>

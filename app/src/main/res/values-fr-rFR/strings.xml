@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">法语格言</string>
+    <string name="action_settings">Réglage</string>
+    <string name="fr_saying01">Je pense, donc, je suis.</string>
+    <string name="fr_saying02">Être adulte, c\'est être seul.</string>
+</resources>

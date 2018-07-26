@@ -6,4 +6,5 @@
     <string name="action_link">链接</string>
     <string name="en_saying_01">浪费时间就是掠夺自己</string>
     <string name="en_saying_02">活到老，学到老</string>
+    <string name="dialog_title">切换语言</string>
 </resources>
