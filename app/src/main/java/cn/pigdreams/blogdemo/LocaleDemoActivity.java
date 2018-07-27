@@ -10,6 +10,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,6 +55,7 @@ public class LocaleDemoActivity extends AppCompatActivity {
     }
 
 
+
     private void changeLanguage(int language) {
         //将选择的language保存到SP中
         SPUtils.getInstance(Constant.SP_NAME).put(Constant.SP_USER_LANG, language);
@@ -95,5 +97,11 @@ public class LocaleDemoActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d("pigdreams",getLocalClassName()+"-->destroy");
+        super.onDestroy();
     }
 }

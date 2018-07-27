@@ -30,6 +30,11 @@ public class SayingActivity extends AppCompatActivity {
         btnReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Resources resources = SayingActivity.this.getResources();
+                Locale locale =new  Locale.Builder().setLanguage("fr").setRegion("FR").build();
+                Configuration configuration = resources.getConfiguration();
+                configuration.setLocale(locale);
+                resources.updateConfiguration(configuration,resources.getDisplayMetrics());
                 Intent intent = new Intent(SayingActivity.this, LocaleDemoActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
@@ -45,6 +50,7 @@ public class SayingActivity extends AppCompatActivity {
             configuration.setLocale(locale);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.N){
             super.attachBaseContext(newBase.createConfigurationContext(configuration));
+            return;
         }else {
             resources.updateConfiguration(configuration,resources.getDisplayMetrics());
         }

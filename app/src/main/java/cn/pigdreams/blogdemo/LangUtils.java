@@ -20,7 +20,6 @@ import java.util.Locale;
  * 4.English
  * 然后每次选择的语言都会存入SP中,下次选择语言时,会与SP中的语言进行对比，不一致才更新资源
  * 根据语言的整数值来匹配对应的Locale对象，却省值为简体中文Locale.SIMPLIFIED_CHINESE
- *
  */
 public class LangUtils {
     public static final int FOLLOW_SYSTEM = 0;
@@ -44,8 +43,21 @@ public class LangUtils {
     }
 
     public static Context getAttachBaseContext(Context context, int lang) {
+        //取出应用configuration中locale与用户设置的locale进行比较,如果不一致才进行资源更新
+        Locale appLocale ;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            //7.0之后的新获取方式
+            appLocale = context.getResources().getConfiguration().getLocales().get(0);
+        }else {
+            appLocale = context.getResources().getConfiguration().locale;
+        }
+        Log.d("pigdreams", "配置语言...本地locale=" + appLocale + ";用户设置的为=" + getCurrentLang(lang));
+        if(getCurrentLang(lang).equals(appLocale)){
+            return context;
+        }
+        Log.d("pigdreams", "Locale已更新");
         //Android 7.0之后需要用另一种方式更改res语言,即配置进context中
-            Log.d("pigdreams", "配置语言...默认locale=" + Locale.getDefault() + ";用户设置的为=" + getCurrentLang(lang));
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 return updateResources(context, lang);
             } else {
@@ -61,11 +73,10 @@ public class LangUtils {
         Locale locale = getCurrentLang(lang);
         Configuration configuration = resources.getConfiguration();
         configuration.setLocale(locale);
-//        configuration.setLocales(new LocaleList(locale));
         return context.createConfigurationContext(configuration);
     }
 
-    public static void changeResLanguage(Context context, int lang) {
+    private static void changeResLanguage(Context context, int lang) {
         Resources resources = context.getResources();
         Configuration configuration = resources.getConfiguration();
         Locale locale = getCurrentLang(lang);

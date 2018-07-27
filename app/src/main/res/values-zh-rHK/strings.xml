@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BlogDemo</string>
+    <string name="action_settings">設置</string>
+    <string name="action_locales">語言列表</string>
+    <string name="action_link">鏈接</string>
+    <string name="en_saying_01">浪費時間就是掠奪自己</string>
+    <string name="en_saying_02">活到老，學到老</string>
+    <string name="dialog_title">切換語言</string>
+</resources>
