@@ -20,9 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SayingActivity">
-
-        </activity>
+        <activity android:name=".SayingActivity"/>
+        <activity android:name=".LocaleListActivity" />
     </application>
 
 </manifest>

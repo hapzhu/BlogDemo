@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.Locale;
 
 /**
- * Create by siven on 2018-07-26
+ * Create by pigdreams on 2018-07-26
  * website:pigdreams.cn
  * 语言自适应工具
  * 数组资源中设定语言,现为4个类型
@@ -18,7 +18,7 @@ import java.util.Locale;
  * 2.简体中文
  * 3.繁体中文
  * 4.English
- * 然后每次选择的语言都会存入SP中,下次选择语言时,会与SP中的语言进行对比，不一致才更新资源
+ * 然后每次选择的语言都会存入SP中,根据SP中保存的语言类型进行资源语言设置
  * 根据语言的整数值来匹配对应的Locale对象，却省值为简体中文Locale.SIMPLIFIED_CHINESE
  */
 public class LangUtils {
@@ -43,21 +43,8 @@ public class LangUtils {
     }
 
     public static Context getAttachBaseContext(Context context, int lang) {
-        //取出应用configuration中locale与用户设置的locale进行比较,如果不一致才进行资源更新
-        Locale appLocale ;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            //7.0之后的新获取方式
-            appLocale = context.getResources().getConfiguration().getLocales().get(0);
-        }else {
-            appLocale = context.getResources().getConfiguration().locale;
-        }
-        Log.d("pigdreams", "配置语言...本地locale=" + appLocale + ";用户设置的为=" + getCurrentLang(lang));
-        if(getCurrentLang(lang).equals(appLocale)){
-            return context;
-        }
-        Log.d("pigdreams", "Locale已更新");
+        Log.d("pigdreams", "配置语言...默认locale=" + Locale.getDefault() + ";用户设置的为=" + getCurrentLang(lang));
         //Android 7.0之后需要用另一种方式更改res语言,即配置进context中
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 return updateResources(context, lang);
             } else {

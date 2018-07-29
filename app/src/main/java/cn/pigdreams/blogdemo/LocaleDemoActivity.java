@@ -88,7 +88,8 @@ public class LocaleDemoActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_locales) {
-
+            Intent intent = new Intent(this,LocaleListActivity.class);
+            startActivity(intent);
             return true;
         } else if (id == R.id.action_link) {
             Intent intent = new Intent();
@@ -101,7 +102,6 @@ public class LocaleDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        Log.d("pigdreams",getLocalClassName()+"-->destroy");
         super.onDestroy();
     }
 }

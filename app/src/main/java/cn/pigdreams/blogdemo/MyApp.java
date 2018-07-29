@@ -8,6 +8,8 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         Utils.init(this);
-        SPUtils.getInstance(Constant.SP_NAME).put(Constant.SP_USER_LANG,LangUtils.FOLLOW_SYSTEM);
+        if( SPUtils.getInstance(Constant.SP_NAME).getInt(Constant.SP_USER_LANG)==-1){
+            SPUtils.getInstance(Constant.SP_NAME).put(Constant.SP_USER_LANG,LangUtils.FOLLOW_SYSTEM);
+        }
     }
 }

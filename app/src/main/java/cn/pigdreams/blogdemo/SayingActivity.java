@@ -21,10 +21,10 @@ public class SayingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saying);
-        if(getSupportActionBar()!=null){
-            getSupportActionBar().setTitle(R.string.app_name);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setBackgroundDrawable(getDrawable(R.color.color_action_bar));
+        if(getActionBar()!=null){
+            getActionBar().setTitle(R.string.app_name);
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+            getActionBar().setBackgroundDrawable(getDrawable(R.color.color_action_bar));
         }
         Button btnReload = findViewById(R.id.btn_reload);
         btnReload.setOnClickListener(new View.OnClickListener() {
